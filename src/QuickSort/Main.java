@@ -31,17 +31,17 @@ public class Main{
 		int i = start - 1; //"Régua", iniciada uma posição antes do primeiro elemento, que serve para mapear onde o próximo dado menor que o pivot será alocado.
 		
 		for(int j = start; j <= end - 1; j++) { //Loop que percorre o array do inicio até o elemento anterior ao pivot, servindo como a segunda régua.
-			if(array[j] < pivot) {   //Condicional que verifica se o elemento j é infereior ao pivot.
-				i++; 				 //Caso a condição seja verdadeira, incrementamos i,
+			if(array[j] < pivot) {	     //Condicional que verifica se o elemento j é infereior ao pivot.
+				i++; 		     //Caso a condição seja verdadeira, incrementamos i,
 				int temp = array[i]; //assinamos a variável "temp" (que serve como um auxiliar na organização dos dados) com o elemento do índice i,
 				array[i] = array[j]; //reescrevemos a posição i com o elemento de j,
-				array[j] = temp;	 //e assinamos o índice j com o elemento temporário.
+				array[j] = temp;     //e assinamos o índice j com o elemento temporário.
 			}
 		}
 		i++; //Logo após o loop se encerrar, sabemos onde será a posição do pivot: uma posição após a última rearranjada.
 		int temp = array[i];   //Então assinamos uma variável temp com elemento de i,
 		array[i] = array[end]; //reescrevemos a posição com o último dado do array (pivot),
-		array[end] = temp;	   //e assinamos o último índice com a variável temp.
+		array[end] = temp;     //e assinamos o último índice com a variável temp.
 		
 		return i; //Retorna o pivot, complemetando o método quickSort.
 	}
